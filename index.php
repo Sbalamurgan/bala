@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+     
+    <title>Home</title>
+<style>
+    .top
+    {
+        float: left;
+        width:100%;
+        height:70px;
+        border:1px solid #000000;
+    }
+    .logo_space
+    {
+        float: left;
+        width:90px;
+        height:75px;
+        border:1px solid #880000; 
+    }
+    .college
+    {
+        float: center;
+        width:90;
+        display:relative;
+        height:99;
+        text-align:center;
+        border:1px solid #880000; 
+        background-color:rgba(73,155,234,1);
+        color:white;
+    }
+    * {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;
+  background-image: url('C:\Users\Admin\Downloads\download.jpg');
+}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body background ="C:\Users\Admin\Downloads\download.jpg">
+<div class="top">
+    <div class="logo_space">
+        <img src="logo.png" width="100%" height="100%"/>
+</div >
+<div class="college">
+     <strong style= "color:white;  font-size:large;"  > K.R.COLLEGE OF ARTS & SCIENCE </strong> <br>
+    <strong style="color:white; font-size:medium;"  >K.R.NAGAR KOVILPATTI-628 503</strong><br>
+
+    <strong style="color:white; font-size:medium;" >(Affiliated to Manonmaniam Sundaranar University)</strong><br>
+ 
+</div> 
+<?php include 'navbar.php';?>
+
+ 
+<div>
+    <div class="content"></div>
+</div>
+  
+<div class="slideshow-container">
+  <div style="align:center">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="clg.jpg" style="width:100%;height:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="clg4.jpg" style="width:100%;height:100%;">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="clg2.jpg" style="width:100%;height:100%">
+  <div class="text">Caption Three</div>
+</div>
+</div>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>
